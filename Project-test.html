@@ -3,75 +3,368 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Starter - Stylesheet</title>
+    <title>Khám phá Ẩm thực Việt Nam</title>
     <style>
-        /* Quy tắc CSS cho thẻ nội dung */
+        /* Main CSS Stylesheet for all three pages */
+        
+        /* Style the body tag */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             font-size: 16px;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
         }
 
-        /* Quy tắc CSS cho thẻ tiêu đề */
+        /* Style the header tag */
         header {
-            background-color: #000000;
+            background-color: #d32f2f;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        /* Quy tắc CSS cho thẻ nav */
+        /* Style the nav tag */
         nav {
-            background-color: #ffffff;
+            background-color: #f44336;
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        /* Quy tắc CSS cho thẻ chính */
+        /* Style the main tag */
         main {
-            background-color: #ecf0f1;
+            background-color: #ffffff;
             font-size: 18px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
 
-        /* Quy tắc CSS cho thẻ chân trang */
+        /* Style the footer tag */
         footer {
-            background-color: #000000;
+            background-color: #d32f2f;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
         }
 
-        /* Quy tắc CSS cho thẻ li */
+        /* Style the li tag */
         li {
             display: inline-block;
             width: 150px;
+            text-align: center;
         }
 
-        /* Quy tắc CSS cho thẻ h1 */
+        /* Style the h1 tag */
         h1 {
             text-align: center;
-            font-family: Georgia, serif;
-            color: #000000;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: #ffffff;
+            margin: 0;
+            font-size: 2.5rem;
         }
 
-        /* Quy tắc CSS cho thẻ p */
+        /* Style the p tag */
         p {
-            line-height: 1.6;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        /* Additional styles for better appearance */
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background-color: #b71c1c;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .dish-section {
+            margin: 30px 0;
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .dish-section h2 {
+            color: #d32f2f;
+            border-bottom: 2px solid #ffcdd2;
+            padding-bottom: 10px;
+        }
+
+        .dish-image {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 8px;
+            margin: 15px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .highlight {
+            background-color: #ffebee;
+            padding: 15px;
+            border-left: 4px solid #d32f2f;
+            margin: 20px 0;
+        }
+
+        .ingredients {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .ingredients h3 {
+            margin-top: 0;
+            color: #d32f2f;
+        }
+
+        .ingredients ul {
+            padding-left: 20px;
+        }
+
+        .ingredients li {
+            display: list-item;
+            width: auto;
+            text-align: left;
+            margin-bottom: 8px;
+        }
+
+        .recipe-steps {
+            counter-reset: step-counter;
+            margin: 20px 0;
+        }
+
+        .recipe-steps li {
+            display: list-item;
+            width: auto;
+            text-align: left;
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .recipe-steps li:before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            background-color: #d32f2f;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .region-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+
+        .region-item {
+            flex-basis: 48%;
+            background-color: #f9f9f9;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .region-item h3 {
+            color: #d32f2f;
+            margin-top: 0;
+        }
+
+        @media (max-width: 768px) {
+            .region-item {
+                flex-basis: 100%;
+            }
+            
+            nav li {
+                display: block;
+                width: 100%;
+                margin: 5px 0;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Testing Code</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Trang chủ</a></li>
-                <li><a href="#">Giới thiệu</a></li>
-                <li><a href="#">Dịch vụ</a></li>
-                <li><a href="#">Liên hệ</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>Khám phá Ẩm thực Việt Nam</h1>
+            <p style="text-align: center; color: #ffcdd2; margin-top: 10px;">Hương vị quê hương trong từng món ăn</p>
+        </div>
     </header>
     
-    <main>
-        <h1>Nội dung chính</h1>
-        <p>Đây là một đoạn văn bản mẫu để minh họa cho thuộc tính line-height. Thuộc tính này điều chỉnh khoảng cách giữa các dòng văn bản, giúp văn bản dễ đọc hơn. Khi line-height được thiết lập hợp lý, người đọc sẽ có trải nghiệm tốt hơn khi đọc nội dung trên trang web của bạn.</p>
-        <p>Đây là một đoạn văn bản khác để tiếp tục minh họa. Bạn có thể thấy rằng với line-height: 1.6, khoảng cách giữa các dòng vừa đủ để tạo sự thoải mái khi đọc mà không làm mất đi tính thẩm mỹ của trang web.</p>
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#pho">Phở</a></li>
+                <li><a href="#bun-cha">Bún Chả</a></li>
+                <li><a href="#banh-mi">Bánh Mì</a></li>
+                <li><a href="#com-tam">Cơm Tấm</a></li>
+                <li><a href="#regions">Vùng miền</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="container">
+        <section class="dish-section" id="pho">
+            <h2>Phở - Biểu tượng ẩm thực Việt</h2>
+            <div class="highlight">
+                <p>Phở không chỉ là món ăn mà còn là văn hóa, là linh hồn của ẩm thực Việt Nam. Từ những quán vỉa hè đến nhà hàng sang trọng, phở luôn hiện diện như một phần không thể thiếu trong đời sống ẩm thực của người Việt.</p>
+            </div>
+            
+            <div class="ingredients">
+                <h3>Nguyên liệu chính:</h3>
+                <ul>
+                    <li>Bánh phở tươi</li>
+                    <li>Thịt bò (nạm, gầu, bắp bò)</li>
+                    <li>Xương bò hầm nước dùng</li>
+                    <li>Gừng, hành khô nướng</li>
+                    <li>Quế, hồi, thảo quả</li>
+                    <li>Rau thơm: húng quế, ngò gai, hành lá</li>
+                    <li>Gia vị: nước mắm, chanh, ớt</li>
+                </ul>
+            </div>
+            
+            <h3>Cách thưởng thức phở đúng điệu:</h3>
+            <ol class="recipe-steps">
+                <li>Thêm một ít nước mắm ngon vào bát phở tùy theo khẩu vị</li>
+                <li>Vắt chanh tươi và thêm ớt nếu thích ăn cay</li>
+                <li>Trộn đều để các gia vị hòa quyện với nước dùng</li>
+                <li>Thưởng thức từng thìa nước dùng nóng hổi trước khi ăn bánh phở và thịt bò</li>
+                <li>Kết hợp với rau thơm để tăng hương vị</li>
+            </ol>
+            
+            <p>Phở Hà Nội thường có vị thanh nhẹ, nước dùng trong veo, trong khi phở Sài Gòn có vị ngọt đậm hơn và thường ăn kèm với nhiều loại rau sống.</p>
+        </section>
+        
+        <section class="dish-section" id="bun-cha">
+            <h2>Bún Chả Hà Nội</h2>
+            <p>Bún chả là món ăn đặc trưng của Hà Nội, thường được ăn vào bữa trưa. Món ăn này gồm có bún tươi, chả viên và chả miếng nướng, ăn kèm với nước mắm pha và rau sống.</p>
+            
+            <div class="ingredients">
+                <h3>Thành phần chính:</h3>
+                <ul>
+                    <li>Thịt ba chỉ xay nhuyễn để làm chả viên</li>
+                    <li>Thịt ba chỉ thái miếng để làm chả miếng</li>
+                    <li>Bún tươi sợi nhỏ</li>
+                    <li>Nước mắm pha: nước mắm, đường, giấm, tỏi, ớt</li>
+                    <li>Rau sống: xà lách, húng quế, tía tô, rau mùi</li>
+                    <li>Đồ chua: cà rốt, đu đủ ngâm giấm</li>
+                </ul>
+            </div>
+            
+            <p>Bún chả thường được ăn kèm với nem rán (chả giò) để tăng thêm hương vị. Khi thưởng thức, thực khách gắp một ít bún, rau sống và chả, chấm vào bát nước mắm pha sẵn rồi thưởng thức.</p>
+        </section>
+        
+        <section class="dish-section" id="banh-mi">
+            <h2>Bánh Mì Việt Nam</h2>
+            <p>Bánh mì Việt Nam là sự kết hợp hoàn hảo giữa ẩm thực Pháp và Việt Nam. Từ chiếc bánh mì baguette của Pháp, người Việt đã sáng tạo ra một phiên bản hoàn toàn mới với nhân đa dạng và hương vị đặc trưng.</p>
+            
+            <div class="highlight">
+                <p>Bánh mì Việt Nam đã được vinh danh trên nhiều tờ báo ẩm thực quốc tế và được xem là một trong những món sandwich ngon nhất thế giới.</p>
+            </div>
+            
+            <h3>Các loại bánh mì phổ biến:</h3>
+            <ul class="recipe-steps">
+                <li><strong>Bánh mì thịt:</strong> kết hợp các loại thịt nguội, pate, chả lụa</li>
+                <li><strong>Bánh mì chảo:</strong> thịt bò xào, trứng ốp la ăn kèm với bánh mì</li>
+                <li><strong>Bánh mì xíu mại:</strong> viên thịt heo sốt cà chua</li>
+                <li><strong>Bánh mì cá mòi:</strong> cá mòi sốt cà chua</li>
+                <li><strong>Bánh mì chay:</strong> dành cho người ăn chay với nhân từ rau củ và đậu</li>
+            </ul>
+        </section>
+        
+        <section class="dish-section" id="com-tam">
+            <h2>Cơm Tấm Sài Gòn</h2>
+            <p>Cơm tấm là món ăn đặc trưng của miền Nam Việt Nam, đặc biệt phổ biến ở Sài Gòn. Món ăn này được làm từ gạo tấm (gạo vỡ hạt) và thường ăn kèm với sườn nướng, chả trứng hoặc bì heo.</p>
+            
+            <div class="ingredients">
+                <h3>Thành phần một đĩa cơm tấm đầy đủ:</h3>
+                <ul>
+                    <li>Cơm tấm (gạo tấm thơm ngon)</li>
+                    <li>Sườn heo nướng ướp sả</li>
+                    <li>Chả trứng hấp</li>
+                    <li>Bì heo (da heo thái sợi)</li>
+                    <li>Đồ chua (cà rốt, củ cải trắng)</li>
+                    <li>Nước mắm ngọt đặc trưng</li>
+                    <li>Hành phi, mỡ hành</li>
+                    <li>Vài lát dưa leo và cà chua</li>
+                </ul>
+            </div>
+            
+            <p>Cơm tấm thường được ăn vào bữa sáng, trưa hoặc tối. Điều đặc biệt là dù là món ăn bình dân nhưng cơm tấm có thể được phục vụ ở mọi không gian, từ quán vỉa hè đến nhà hàng sang trọng.</p>
+        </section>
+        
+        <section class="dish-section" id="regions">
+            <h2>Ẩm thực theo vùng miền</h2>
+            <p>Việt Nam với địa hình trải dài từ Bắc vào Nam, mỗi vùng miền có những đặc trưng ẩm thực riêng biệt, tạo nên một bức tranh ẩm thực vô cùng phong phú và đa dạng.</p>
+            
+            <div class="region-list">
+                <div class="region-item">
+                    <h3>Miền Bắc</h3>
+                    <p>Ẩm thực miền Bắc có vị thanh nhẹ, ít sử dụng đường và ớt. Các món ăn tiêu biểu: phở Hà Nội, bún chả, bún thang, bánh cuốn Thanh Trì, cốm Làng Vòng.</p>
+                </div>
+                
+                <div class="region-item">
+                    <h3>Miền Trung</h3>
+                    <p>Ẩm thực miền Trung có vị cay nồng và mặn hơn. Đặc sản nổi tiếng: bún bò Huế, mì Quảng, cao lầu Hội An, bánh xèo miền Trung, cơm hến.</p>
+                </div>
+                
+                <div class="region-item">
+                    <h3>Miền Nam</h3>
+                    <p>Ẩm thực miền Nam có vị ngọt đậm từ đường và nước dừa. Các món đặc trưng: cơm tấm Sài Gòn, hủ tiếu Nam Vang, bánh xèo miền Nam, lẩu mắm, cá lóc nướng trui.</p>
+                </div>
+                
+                <div class="region-item">
+                    <h3>Tây Nguyên</h3>
+                    <p>Ẩm thực Tây Nguyên mang đậm nét hoang dã với các món nướng, gỏi và rượu cần. Đặc sản: cơm lam, thịt nướng, gà nướng Bản Đôn, rượu cần, măng le rừng.</p>
+                </div>
+            </div>
+        </section>
     </main>
     
     <footer>
-        <p>Bản quyền © 2025 - SawnLee</p>
+        <div class="container">
+            <p>© 2023 Khám phá Ẩm thực Việt Nam | Bảo tồn và phát huy giá trị văn hóa ẩm thực dân tộc</p>
+            <p>Liên hệ: info@amthucvietnam.com | Điện thoại: 0123 456 789</p>
+        </div>
     </footer>
 </body>
 </html>
